@@ -17,7 +17,7 @@ module Heroku::Command
       puts "(removing the addon will delete that info from the Adminium database)"
       puts "Do you confirm the plugin execution ? (yes / no)"
       print "> "
-      answer = gets
+      answer = STDIN.gets
       if answer.chomp == 'yes'
         RestClient::Resource.new(@adminium_url).put :account => {:db_url => @config_vars['DATABASE_URL']}
         puts "Successfully enabled Adminium for the current app."
