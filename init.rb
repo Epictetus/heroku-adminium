@@ -20,7 +20,7 @@ module Heroku::Command
       answer = STDIN.gets
       if ['yes', 'y'].include? answer.chomp.downcase
         if db_urls.empty?
-          puts "We did not find any DATABASE_URL for your application, please provide us manually on our addon web page"
+          puts "We did not find any DATABASE_URL for your application, please provide it manually on our addon web page"
         else
           if db_urls.length > 1
             puts "We found several database urls you may want to connect to, please choose one :"
